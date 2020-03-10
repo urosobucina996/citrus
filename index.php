@@ -1,8 +1,8 @@
 <?php
 session_start();
-include('services/product-services.php');
+include('services/data-services.php');
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Home Page</title>
@@ -41,6 +41,7 @@ include('services/product-services.php');
             </div>
         </div>
     </div>
+    <!-- Display Products -->
     <div class="col-lg-12 col-xl-12">
         <div class="container">
             <div class="row">
@@ -58,27 +59,50 @@ include('services/product-services.php');
                 ?>
             </div>
         </div>
-
-        <div id="form" class="container">
-            <h3>Comments Form</h3>
-            <form>
-            <div class="col-xs-12">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <!-- End display products -->
+        <!-- Display comments -->
+        <div id="comments" class="container">
+            <div class="row">
+                <h4>Comments</h4>
+                <?php foreach(getAllComments() as $value){ ?>
+                <div class="col-lg-12 col-xl-12 comments">
+                <h3> <?php echo $value['name']; ?>
+                    <p><?php echo $value['email'];?></p>
+                    <sapn><?php echo $value['text'];?></span>
+                 </div>
+                <?php 
+                }
+                ?>
             </div>
-            <div class="col-xs-12">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-            </div>
-            <div class="col-xs-12">
-                <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-            </div>
-            <div class="col-xs-12">
-                <input type="submit" value="Submit">
-            </div>
-            </form>
         </div>
+        <!-- End comments -->
+        <!-- Form for Comments -->
+        <div class="col-lg-12 col-xl-12">
+            <div id="form" class="container">
+                <div class="row">
+                    <h3>Comments Form</h3>
+                    <form>
+                    <div class="col-xs-12">
+                        <label for="fname">Name</label>
+                        <input type="text" id="fname" name="name" placeholder="Your name." required>
+                    </div>
+                    <div class="col-xs-12">
+                        <label for="lname">Email</label>
+                        <input type="text" id="femail" name="email" placeholder="Your email." required>
+                    </div>
+                    <div class="col-xs-12">
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+                    </div>
+                    <div class="col-xs-12">
+                        <input type="button" onClick="submitForm();" value="Submit">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Form for Comments -->
+        <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -90,5 +114,6 @@ include('services/product-services.php');
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/services.js"></script>
+        <!-- End of Scripts -->
 </body>
 </html>

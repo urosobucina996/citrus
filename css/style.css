@@ -193,7 +193,7 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-input[type=submit] {
+input[type=button] {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -210,4 +210,12 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+}
+#comments{
+    text-align:center;
+}
+.comments{
+    background-color:white;
+    margin-top:10px;
+    margin-button:10px;
 }
