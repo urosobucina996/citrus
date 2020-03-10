@@ -1,0 +1,213 @@
+body {
+    background-color: #ededed;
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.login-form {
+    width: 100%;
+    height: 100%;
+}
+
+.login-form .form-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form input {
+    width: 270px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+    border: 2px solid #255c82;
+    border-radius: 100px;
+    background: #fff;
+    transition: all .4s;
+}
+
+.login-form input:focus {
+    border: 2px solid #87ebed;
+    border-radius: 100px;
+    outline: none;
+    transition: all .4s;
+}
+
+.login-form button {
+    width: 270px;
+    height: 40px;
+    line-height: 36px;
+    padding: 0;
+    text-align: center;
+    font-size: 15px;
+    border: 2px solid #255c82;
+    border-radius: 100px;
+    margin-top: 1rem;
+    background-color: #87ebed;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.login-form button:hover {
+    background-color: #255c82;
+    color: #fff;
+    transition: all .4s;
+}
+
+.mac-contract-form {
+
+}
+
+.mac-contract-form input {
+    width: 270px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+    border: 2px solid #255c82;
+    border-radius: 100px;
+    background: #eeeeee;
+    margin-right: 20px;
+    transition: all .4s;
+}
+
+.mac-contract-form input:focus {
+    border: 2px solid #87ebed;
+    border-radius: 100px;
+    outline: none;
+    transition: all .4s;
+}
+
+.mac-contract-form button {
+    width: auto;
+    height: 44px;
+    line-height: 38px;
+    padding: 0 45px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 100px;
+    margin-top: 1rem;
+    background-color: #87ebed;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.mac-contract-form button:hover {
+    background-color: #255c82;
+    color: #fff;
+    transition: all .4s;
+}
+
+.page-top {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #999999;
+}
+
+.page-top h1 {
+    margin-bottom: 0;
+}
+
+.page-top a {
+    text-decoration: none;
+    display: inline-block;
+    width: 270px;
+    height: 40px;
+    line-height: 36px;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+    border: 2px solid #255c82;
+    border-radius: 100px;
+    background: #eeeeee;
+    transition: all .4s;
+    color: #696969;
+}
+
+.page-top a:hover {
+    background-color: #255c82;
+    color: #fff;
+    transition: all .4s;
+}
+
+ul.tabs li:hover {
+    background-color: #87ebed;
+    color: #333;
+    transition: all .4s;
+}
+
+ul.tabs li.active {
+    background-color: #87ebed;
+    color: #333;
+    transition: all .4s;
+    display: block;
+}
+
+.tab_container {
+    border-top: none;
+    clear: both;
+    float: left;
+    width: 100%;
+    background: transparent;
+    overflow: auto;
+}
+
+.tab_content {
+    padding: 20px;
+    display: none;
+}
+
+.tab_drawer_heading {
+    display: none;
+}
+.image-size{
+    width: 300px;
+    height: 300px;
+}
+
+#form{
+ text-align:center;
+}
+
+input[type=text], select, textarea {
+  width: 60%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  padding-left:auto;
+  padding-right:auto;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
