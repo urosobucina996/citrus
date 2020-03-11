@@ -86,7 +86,7 @@ include('services/database.php');
             <div id="form" class="container">
                 <div class="row">
                     <div class="col-12">
-                    <h3>Comments Form</h3>
+                    <h4 class="text-center">Comments Form</h4>
                     </div>
                     <form>
                     <div class="col-3"></div>
