@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 10, 2020 at 07:35 PM
+-- Generation Time: Mar 11, 2020 at 07:45 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.5
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `citrus_fruits`
 --
+CREATE DATABASE IF NOT EXISTS `citrus_fruits` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `citrus_fruits`;
 
 -- --------------------------------------------------------
 
@@ -35,21 +37,16 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `text` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `status`, `name`, `email`, `text`) VALUES
-(1, 1, 'Uros', 'uros.obucina@gmail.com', 'Prvi komentar.'),
-(2, 1, 'Uros', 'uros.obucina@gmail.com', 'Prvi komentar.'),
-(3, 0, 'Uros', 'uros.obucina@gmail.com', 'Prvi komentar.'),
-(4, 0, 'Nemanj', 'nemanj@gmail.com', 'Ovo je drugi komentar.'),
-(5, 0, 'dormatory', 'uros.obucina', 'Uros'),
-(6, 0, 'dormatory', 'asdasdas', 'asdasd'),
-(7, 1, 'new ', 'new@gmail.com', 'Testing 1');
+INSERT INTO `comments` (`id`, `status`, `name`, `email`, `text`, `date`) VALUES
+(12, 1, 'Milos', 'milos@gmail.com', 'Grejpovi su strava.', '2020-3-11 20:43:30');
 
 -- --------------------------------------------------------
 
@@ -72,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 INSERT INTO `product` (`id`, `title`, `image`, `description`) VALUES
 (1, 'Lemon 1', 'public/images/lemon.jpg', 'Lemon 1 description'),
-(2, 'Orange 1', 'public/images/lemon.jpg', 'Orange 1'),
+(2, 'Orange 1', 'public/images/orange.jpg', 'Orange 1'),
 (3, 'Grapefruit 1', 'public/images/grapefruit.jpg', 'Grapefruit 1 description'),
 (4, 'Lemon 2', 'public/images/lemon.jpg', 'Lemon 2'),
 (5, 'Orange 2', 'public/images/orange.jpg', 'Orange 2'),
@@ -80,6 +77,27 @@ INSERT INTO `product` (`id`, `title`, `image`, `description`) VALUES
 (7, 'Lemon 3', 'public/images/lemon.jpg', 'Lemon 3 description'),
 (8, 'Orange 3', 'public/images/orange.jpg', 'Orange 3 description'),
 (9, 'Grapefruit 3', 'public/images/grapefruit.jpg', 'Grapefruit 3 description');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'Uros', 'uros123');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

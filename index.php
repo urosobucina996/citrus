@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('services/data-services.php');
+include('services/database.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@ include('services/data-services.php');
                 <div class="col-xs-6">
                     <h1>Citrus</h1>
                 </div>
-                <div class="col-xs-6 align-right">
+                <!--<div class="col-xs-6 align-right">
                 <?php if(empty($_SESSION['username'])) {
                     ?>
                     <a href='login.php'>Login</a>
@@ -37,16 +38,16 @@ include('services/data-services.php');
                     <?php
                     }
                     ?>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
     <!-- Display Products -->
-    <div class="col-lg-12 col-xl-12">
+    <div class="col-12">
         <div class="container">
             <div class="row">
-                <?php foreach(getAllProducts() as $value){ ?>
-                <div class="col-lg-4 col-xl-4">
+                <?php foreach(getAllProducts(connect()) as $value){ ?>
+                <div class="col-4">
                     <h3> <?php echo $value['title']; ?>
                     <img class="responsive image-size" src="<?php
                         echo $value['image'];?>" />
@@ -63,40 +64,51 @@ include('services/data-services.php');
         <!-- Display comments -->
         <div id="comments" class="container">
             <div class="row">
-                <h4>Comments</h4>
-                <?php foreach(getAllComments() as $value){ ?>
-                <div class="col-lg-12 col-xl-12 comments">
-                <h3> <?php echo $value['name']; ?>
-                    <p><?php echo $value['email'];?></p>
-                    <sapn><?php echo $value['text'];?></span>
+                <div class="col-12">
+                    <?php if(getAllComments(connect())) {?>
+                <h4 class="text-center">Comments</h4>
+                </div>
+                <?php foreach(getAllComments(connect()) as $value){ ?>
+                <div class="col-12 comments">
+                <h5> <?php echo $value['name']; ?> <span><?php echo $value['email'];?></span></h5>
+                    <span><?php echo $value['text'];?></span>
+                    <span><?php echo $value['date'];?></span>
                  </div>
                 <?php 
+                    }
                 }
                 ?>
             </div>
         </div>
         <!-- End comments -->
         <!-- Form for Comments -->
-        <div class="col-lg-12 col-xl-12">
+        <div class="col-12">
             <div id="form" class="container">
                 <div class="row">
+                    <div class="col-12">
                     <h3>Comments Form</h3>
+                    </div>
                     <form>
-                    <div class="col-xs-12">
-                        <label for="fname">Name</label>
+                    <div class="col-3"></div>
+                    <div class="col-6">
                         <input type="text" id="fname" name="name" placeholder="Your name." required>
                     </div>
-                    <div class="col-xs-12">
-                        <label for="lname">Email</label>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    <div class="col-6">
                         <input type="text" id="femail" name="email" placeholder="Your email." required>
                     </div>
-                    <div class="col-xs-12">
-                        <label for="subject">Subject</label>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    <div class="col-6">
                         <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
                     </div>
-                    <div class="col-xs-12">
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    <div class="col-6">
                         <input type="button" onClick="submitForm();" value="Submit">
                     </div>
+                    <div class="col-3"></div>
                     </form>
                 </div>
             </div>

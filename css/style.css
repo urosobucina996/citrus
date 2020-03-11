@@ -61,53 +61,6 @@ body {
     transition: all .4s;
 }
 
-.mac-contract-form {
-
-}
-
-.mac-contract-form input {
-    width: 270px;
-    height: 40px;
-    line-height: 40px;
-    padding: 0;
-    text-align: center;
-    font-size: 12px;
-    border: 2px solid #255c82;
-    border-radius: 100px;
-    background: #eeeeee;
-    margin-right: 20px;
-    transition: all .4s;
-}
-
-.mac-contract-form input:focus {
-    border: 2px solid #87ebed;
-    border-radius: 100px;
-    outline: none;
-    transition: all .4s;
-}
-
-.mac-contract-form button {
-    width: auto;
-    height: 44px;
-    line-height: 38px;
-    padding: 0 45px;
-    border: none;
-    text-align: center;
-    font-size: 15px;
-    border-radius: 100px;
-    margin-top: 1rem;
-    background-color: #87ebed;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: all .4s;
-}
-
-.mac-contract-form button:hover {
-    background-color: #255c82;
-    color: #fff;
-    transition: all .4s;
-}
-
 .page-top {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -180,8 +133,8 @@ ul.tabs li.active {
  text-align:center;
 }
 
-input[type=text], select, textarea {
-  width: 60%;
+#form input[type=text], select, textarea {
+  width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -218,4 +171,5 @@ input[type=submit]:hover {
     background-color:white;
     margin-top:10px;
     margin-button:10px;
+    padding: 10px;
 }

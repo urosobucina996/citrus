@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!empty($_SESSION['username'])) {
-    header('Location: index.php');
+    header('Location: admin.php');
 }
 ?>
 <!doctype html>
@@ -18,7 +18,7 @@ if(!empty($_SESSION['username'])) {
     <div class="container">
         <div class="row">
             <div class='login-form'>
-                <form class='form-position' action="services/login-service.php" method="post">
+                <form class='form-position' action="services/login-services.php" method="post">
                     
                         <div class='form-group'>
                             <input type="text" placeholder="Enter Username" id='username' name="username">
