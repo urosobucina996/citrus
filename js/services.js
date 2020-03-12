@@ -10,10 +10,15 @@ function submitForm() {
             url: "services/ajax-services.php",
             method:"POST",
             data: {function:'comment',name: name, email: email,subject:subject,date:date+' '+time},   
-            success: function (result) {
+            success: function (response) {
                     $("#fname").val("");
                     $("#femail").val("");
                     $("#subject").val("");
+                    if(response == "Validation failed"){
+                        $("#fname").css("border-color", "red");
+                        $("#femail").css("border-color", "red");
+                        $("#subject").css("border-color", "red");
+                    }
             },
             error: function() {
                 alert("Error!");
