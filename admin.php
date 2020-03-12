@@ -48,7 +48,7 @@ if(empty($_SESSION['username'])) {
                     <p><?php echo $value['email'];?></p>
                     <span><?php echo $value['text'];?></span>
                     <span><?php echo $value['date'];?></span>
-                    <button class="pull-right" onclick="aproveComment(<?php echo $value['id']; ?>)">Approve me!</button>
+                    <input type="button" class="pull-right" onclick="aproveComment(<?php echo $value['id']; ?>)" value="Approve me!">
                  </div>
                 <?php 
                 }

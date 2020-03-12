@@ -2,6 +2,7 @@
 session_start();
 include('services/data-services.php');
 include('services/database.php');
+$conn = connect();
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +47,7 @@ include('services/database.php');
     <div class="col-12">
         <div class="container">
             <div class="row">
-                <?php foreach(getAllProducts(connect()) as $value){ ?>
+                <?php foreach(getAllProducts($conn) as $value){ ?>
                 <div class="col-4">
                     <h3> <?php echo $value['title']; ?>
                     <img class="responsive image-size" src="<?php
@@ -65,14 +66,14 @@ include('services/database.php');
         <div id="comments" class="container">
             <div class="row">
                 <div class="col-12">
-                    <?php if(getAllComments(connect())) {?>
+                    <?php if(getAllComments($conn)) {?>
                 <h4 class="text-center">Comments</h4>
                 </div>
                 <?php foreach(getAllComments(connect()) as $value){ ?>
                 <div class="col-12 comments">
                 <h5> <?php echo $value['name']; ?> <span><?php echo $value['email'];?></span></h5>
-                    <span><?php echo $value['text'];?></span>
-                    <span><?php echo $value['date'];?></span>
+                    <span class="pull-left"><?php echo $value['text'];?></span>
+                    <span class="pull-right"><?php echo $value['date'];?></span>
                  </div>
                 <?php 
                     }

@@ -15,10 +15,14 @@ function submitForm() {
                     $("#femail").val("");
                     $("#subject").val("");
             },
-            error: function () {
-                console.log('Somethin is bad with request.');
+            error: function() {
+                alert("Error!");
             }
         });
+    }else{
+        $("#fname").css("border-color", "red");
+        $("#femail").css("border-color", "red");
+        $("#subject").css("border-color", "red");
     }
 }
 

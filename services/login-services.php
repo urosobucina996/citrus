@@ -11,7 +11,7 @@ function login(){
         $conn = connect();
         try{
             $query = $conn->prepare("SELECT * FROM users where username =? and password=?");
-            $query->execute([$_POST['username'],$_POST['password']]);
+            $query->execute([$_POST['username'],sha1($_POST['password'])]);
             if($query->rowCount() == 1){
                 session_start();
                 while($row = $query->fetch()){

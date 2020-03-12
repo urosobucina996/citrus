@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 11, 2020 at 07:45 PM
+-- Generation Time: Mar 12, 2020 at 06:13 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.5
 
@@ -39,14 +39,17 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `text` text COLLATE utf8_unicode_ci NOT NULL,
   `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`id`, `status`, `name`, `email`, `text`, `date`) VALUES
-(12, 1, 'Milos', 'milos@gmail.com', 'Grejpovi su strava.', '2020-3-11 20:43:30');
+(14, 1, 'Mirko', 'mirko@gmail.com', 'Novi komentar.', '2020-3-12 18:20:12'),
+(13, 1, 'Marko', 'marko@gmail.com', 'Limun je ok.', '2020-3-11 20:54:46'),
+(12, 1, 'Milos', 'milos@gmail.com', 'Grejpovi su strava.', '2020-3-11 20:43:30'),
+(18, 1, 'Sanja', 'sanja@yahoo.com', 'Komentar.', '2020-3-12 19:7:46');
 
 -- --------------------------------------------------------
 
@@ -97,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'Uros', 'uros123');
+(1, 'Uros', '944b810e9ad7d2da2c7a6b5c137ef73339ab584f');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
