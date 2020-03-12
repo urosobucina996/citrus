@@ -6,7 +6,6 @@ if(!empty($_SESSION['username'])) {
 $username = $_POST['username'];
 $password = $_POST['password'];
 function login(){
-    // TODO proveriti regularne izraze na kraju.
     if(preg_match('/^[A-Za-z][A-Za-z0-9]{3,10}$/',$_POST['username']) && preg_match('/^[A-Za-z0-9]{5,10}$/',$_POST['password'])){
         $conn = connect();
         try{
