@@ -92,17 +92,17 @@ $conn = connect();
                     <form>
                     <div class="col-3"></div>
                     <div class="col-6">
-                        <input type="text" id="fname" name="name" placeholder="Your name." required>
+                        <input type="text" id="fname" name="name" placeholder="Mike" required>
                     </div>
                     <div class="col-3"></div>
                     <div class="col-3"></div>
                     <div class="col-6">
-                        <input type="text" id="femail" name="email" placeholder="Your email." required>
+                        <input type="text" id="femail" name="email" placeholder="example@gmail.com" required>
                     </div>
                     <div class="col-3"></div>
                     <div class="col-3"></div>
                     <div class="col-6">
-                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+                        <textarea id="subject" name="subject" placeholder="Your comment." style="height:200px" required></textarea>
                     </div>
                     <div class="col-3"></div>
                     <div class="col-3"></div>

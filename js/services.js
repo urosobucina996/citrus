@@ -11,13 +11,17 @@ function submitForm() {
             method:"POST",
             data: {function:'comment',name: name, email: email,subject:subject,date:date+' '+time},   
             success: function (response) {
-                    $("#fname").val("");
-                    $("#femail").val("");
-                    $("#subject").val("");
-                    if(response == "Validation failed"){
+                    if(response == "Ok"){
+                        $("#fname").val("");
+                        $("#femail").val("");
+                        $("#subject").val("");
+                        $("#fname").css("border-color", "green");
+                        $("#femail").css("border-color", "green");
+                        $("#subject").css("border-color", "green");
+                    }else{
                         $("#fname").css("border-color", "red");
                         $("#femail").css("border-color", "red");
-                        $("#subject").css("border-color", "red");
+                        $("#subject").css("border-color", "red"); 
                     }
             },
             error: function() {

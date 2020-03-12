@@ -6,6 +6,7 @@ function comment(){
     $sql = "INSERT INTO comments (status,name, email, text,date) VALUES (?,?,?,?,?)";
     if(preg_match('/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/',$_POST['email']) && preg_match('/^[A-Z][a-z\s]{3,40}.$/',$_POST['subject'])){
         $conn->prepare($sql)->execute([0,$_POST['name'], $_POST['email'], $_POST['subject'],$_POST['date']]);
+        echo "Ok";
     }else{
         echo 'Validation failed';
     }
